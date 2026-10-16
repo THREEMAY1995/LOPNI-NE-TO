@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#17152f">
+  <meta name="description" content="Лопни не то! — короткая аркадная игра на реакцию. Лопай цветные пузыри и избегай опасного чёрного.">
+  <title>Лопни не то! — игра на реакцию</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">●</div>
+      <div>
+        <p class="eyebrow">МИНИ-АРКАДА</p>
+        <h1>Лопни не то!</h1>
+      </div>
+      <button id="soundBtn" class="icon-button" type="button" aria-label="Включить или выключить звук" title="Звук">🔊</button>
+    </header>
+
+    <section class="stats" aria-label="Статистика игры">
+      <div class="stat"><span>СЧЁТ</span><strong id="score">0</strong></div>
+      <div class="stat timer-stat"><span>ВРЕМЯ</span><strong id="timer">30</strong></div>
+      <div class="stat"><span>РЕКОРД</span><strong id="best">0</strong></div>
+    </section>
+
+    <section class="arena-wrap">
+      <div class="arena-label">
+        <span>Лопай цветные</span>
+        <span class="danger-label"><i></i> Не трогай чёрный</span>
+      </div>
+      <div id="arena" class="arena" aria-label="Игровое поле">
+        <div id="intro" class="overlay">
+          <div class="overlay-card">
+            <div class="demo-bubbles" aria-hidden="true"><span>🟣</span><span>🟡</span><span>⚫</span></div>
+            <h2>Проверь реакцию</h2>
+            <p>Лопай цветные пузыри. Чёрный — опасный. У тебя 30 секунд!</p>
+            <button id="startBtn" class="primary-button" type="button">Играть</button>
+          </div>
+        </div>
+        <div id="end" class="overlay hidden">
+          <div class="overlay-card">
+            <div id="resultIcon" class="result-icon">🏁</div>
+            <h2 id="resultTitle">Раунд окончен!</h2>
+            <p id="resultText">Твой результат: 0</p>
+            <button id="againBtn" class="primary-button" type="button">Ещё раз</button>
+            <button id="shareBtn" class="secondary-button" type="button">Поделиться результатом</button>
+            <p id="shareStatus" class="share-status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="tip"><span class="tip-dot"></span><span id="tipText">Собирай серию — получай больше очков.</span></div>
+    <footer>
+      <p>Бесплатная мини-игра • Без регистрации</p>
+      <p class="footer-small">Результат сохраняется только на этом устройстве.</p>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
